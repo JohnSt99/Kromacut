@@ -54,6 +54,8 @@ description: दो-चरण रंग कटौती, तय पैलेट 
 
 निर्माताओं की उत्पाद सूचियाँ देखें. [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+आपूर्तिकर्ता का पैलेट चुनें, **फ़िलामेंट के रंग** खोलें और निर्माता का पेज खोलने के लिए किसी रंग के नाम पर क्लिक करें।
+
 अंतर्निहित और आपूर्तिकर्ता पैलेट केवल पढ़ने योग्य हैं। अनुकूलित करने के लिए क्लोन करें। असली स्पूल और परत व्यवहार के लिए अलग से [फ़िलामेंट अंशांकन](calibration-theory) इस्तेमाल करें।
 
 ## कस्टम पैलेट

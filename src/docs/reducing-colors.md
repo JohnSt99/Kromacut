@@ -54,6 +54,8 @@ A fixed palette offers only its chosen colors. After any first-stage reduction, 
 
 See the manufacturer listings for [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla), [Prusament PLA](https://prusament.com/materials/pla/), [Prusament PETG](https://prusament.com/materials/prusament-petg/), [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament), and [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg).
 
+Select a supplier palette, expand **Filament colors**, and click a shade name to open the manufacturer page.
+
 Built-in and supplier palettes are read-only. Clone one to customize it. Use [filament calibration](calibration-theory) separately for actual spool and layer behavior.
 
 ## Custom Palettes

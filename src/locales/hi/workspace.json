@@ -10,6 +10,8 @@
         "selectAPalette": "पैलेट चुनें",
         "auto": "स्वचालित",
         "supplierPalettes": "निर्माता पैलेट",
+        "filamentColors": "फ़िलामेंट के रंग",
+        "openManufacturerFailed": "निर्माता का पेज नहीं खुल सका।",
         "unofficialReferencePalettesOfFilamentColorNamesAndHex": "फ़िलामेंट के रंग-नामों और हेक्स मानों के अनौपचारिक संदर्भ पैलेट। किसी निर्माता से संबद्ध, अनुमोदित या प्रायोजित नहीं हैं; नाम केवल संबंधित उत्पादों की पहचान के लिए हैं।",
         "customPalettes": "कस्टम पैलेट",
         "numberOfColors": "रंगों की संख्या",

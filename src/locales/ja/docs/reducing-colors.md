@@ -54,6 +54,8 @@ description: 2段階の減色処理、固定パレット、色の置換と透明
 
 メーカーの製品ページで色名を確認できます。 [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+メーカーのパレットを選び、**フィラメントの色**を展開して色名をクリックすると、メーカーのページが開きます。
+
 内蔵パレットとメーカーのパレットは読み取り専用です。カスタマイズするには複製します。実物のスプールと層の挙動には、別途[フィラメント校正](calibration-theory)を使ってください。
 
 ## 独自パレット

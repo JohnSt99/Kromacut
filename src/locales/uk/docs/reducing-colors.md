@@ -54,6 +54,8 @@ description: Дізнайтеся про двоетапне скорочення
 
 Перегляньте сторінки матеріалів на сайтах виробників. [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+Виберіть палітру постачальника, розгорніть **Кольори філаменту** й натисніть назву кольору, щоб відкрити сторінку виробника.
+
 Вбудовані палітри й палітри постачальників доступні лише для читання. Клонуйте палітру для налаштування. Окремо використовуйте [калібрування філаментів](calibration-theory) для фактичної поведінки котушок і шарів.
 
 ## Власні палітри

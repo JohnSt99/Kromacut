@@ -10,6 +10,8 @@
     "selectAPalette": "Choisir une palette",
     "auto": "Auto",
     "supplierPalettes": "Palettes de fabricants",
+    "filamentColors": "Couleurs de filament",
+    "openManufacturerFailed": "Impossible d’ouvrir la page du fabricant.",
     "unofficialReferencePalettesOfFilamentColorNamesAndHex": "Palettes de référence non officielles de noms et de codes hexadécimaux de couleurs de filaments. Sans affiliation, approbation ni parrainage d’un fabricant ; les noms identifient uniquement les produits référencés.",
     "customPalettes": "Palettes personnalisées",
     "numberOfColors": "Nombre de couleurs",

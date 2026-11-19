@@ -54,6 +54,8 @@ Le **Tavolozze dei fornitori** sono riferimenti non ufficiali di nomi e colori e
 
 Consulta le schede prodotto dei produttori. [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+Seleziona una tavolozza del fornitore, espandi **Colori dei filamenti** e fai clic sul nome di un colore per aprire la pagina del produttore.
+
 Le tavolozze integrate e dei fornitori sono di sola lettura. Clonale per personalizzare. Usa separatamente la [calibrazione dei filamenti](calibration-theory) per il comportamento reale di bobine e strati.
 
 ## Tavolozze personalizzate

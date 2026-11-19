@@ -54,6 +54,8 @@ description: দুই ধাপের রং কমানো, নির্দ�
 
 প্রস্তুতকারকদের পণ্য তালিকা দেখুন. [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+একটি সরবরাহকারীর প্যালেট বেছে নিয়ে **ফিলামেন্টের রং** খুলুন। প্রস্তুতকারকের পৃষ্ঠা খুলতে রঙের নামে ক্লিক করুন।
+
 অন্তর্ভুক্ত ও সরবরাহকারীর প্যালেট শুধু পড়া যায়। বদলাতে কপি তৈরি করুন। প্রকৃত স্পুল ও স্তরের আচরণের জন্য আলাদাভাবে [ফিলামেন্ট ক্যালিব্রেশন](calibration-theory) ব্যবহার করুন।
 
 ## নিজের প্যালেট

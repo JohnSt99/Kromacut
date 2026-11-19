@@ -10,6 +10,8 @@
         "selectAPalette": "パレットを選択",
         "auto": "自動",
         "supplierPalettes": "メーカー別パレット",
+        "filamentColors": "フィラメントの色",
+        "openManufacturerFailed": "メーカーのページを開けませんでした。",
         "unofficialReferencePalettesOfFilamentColorNamesAndHex": "フィラメントの色名と16進カラー値をまとめた非公式の参考パレットです。メーカーとの提携、承認、支援関係はありません。名称は参照先の製品を示すためにのみ使用しています。",
         "customPalettes": "カスタムパレット",
         "numberOfColors": "色数",

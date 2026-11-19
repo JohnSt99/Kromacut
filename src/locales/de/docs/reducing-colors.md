@@ -54,6 +54,8 @@ Eine feste Palette bietet nur ihre ausgewählten Farben. Nach einer eventuellen 
 
 Die Hersteller führen diese Produktreihen auf ihren eigenen Seiten. [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+Wähle eine Herstellerpalette, klappe **Filamentfarben** auf und klicke auf einen Farbnamen, um die Herstellerseite zu öffnen.
+
 Integrierte Paletten und Herstellerpaletten sind schreibgeschützt. Klone eine Palette, um sie anzupassen. Verwende die [Filamentkalibrierung](calibration-theory) getrennt davon für das tatsächliche Verhalten von Spulen und Schichten.
 
 ## Eigene Paletten

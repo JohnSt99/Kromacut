@@ -54,6 +54,8 @@ description: 了解两阶段减色流程、固定调色板，以及重新着色�
 
 可在制造商的产品页面查看颜色名称。 [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+选择供应商调色板，展开**耗材颜色**，然后点击颜色名称以打开制造商页面。
+
 内置和供应商调色板只读。克隆后可自定义。实际耗材卷及叠层表现请单独使用[耗材校准](calibration-theory)。
 
 ## 自定义调色板

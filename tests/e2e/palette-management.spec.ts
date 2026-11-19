@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { fakeDesktopBeforeLoad, type FakeDesktopWindow } from './helpers/fakeDesktop';
 
 /**
  * Focused UI coverage for advanced palette management (issue #26):
@@ -49,4 +50,75 @@ test('@smoke supplier palettes, clone, and color toggles work end to end', async
     // Toggle state survives a reload (persisted to localStorage)
     await page.reload();
     await expect(page.locator('#final-colors')).toHaveValue('29');
+});
+
+const prusamentShade = 'https://www.prusa3d.com/product/prusament-pla-pistachio-green-1kg';
+const sunluLine = 'https://www.sunlu.com/products/pla-classic-filament';
+
+test('@smoke a supplier shade opens its manufacturer page without changing the palette', async ({
+    page,
+    context,
+}) => {
+    await context.route(prusamentShade, async (route) => {
+        await route.fulfill({ contentType: 'text/plain', body: 'Manufacturer product listing' });
+    });
+    await page.goto('/app');
+    const select = page.locator('#palette-select');
+    const reveal = page.getByText('Filament colors', { exact: true });
+    await expect(reveal).toHaveCount(0);
+
+    await select.click();
+    await page.getByRole('option', { name: /Prusament PLA \(20\)/ }).click();
+    await reveal.click();
+    const shade = page.getByRole('link', { name: 'Pistachio Green', exact: true });
+    await expect(shade).toHaveAttribute('href', prusamentShade);
+    const popupReady = page.waitForEvent('popup');
+    await shade.press('Enter');
+    const popup = await popupReady;
+    await expect(popup).toHaveURL(prusamentShade);
+    await popup.close();
+    await expect(select).toContainText('Prusament PLA');
+    await expect(page.locator('#final-colors')).toHaveValue('20');
+
+    await select.click();
+    await page.getByRole('option', { name: /SUNLU PLA Classic \(15\)/ }).click();
+    await reveal.click();
+    await expect(page.getByRole('link', { name: 'Chocolate', exact: true })).toHaveAttribute(
+        'href',
+        sunluLine
+    );
+    await expect(shade).toHaveCount(0);
+});
+
+test('@smoke desktop hands the supplier link to the browser and can retry a failed launch', async ({
+    page,
+}) => {
+    type TestWindow = FakeDesktopWindow & { supplierPageRequests: string[] };
+    await fakeDesktopBeforeLoad(page, (desktop) => {
+        const host = window as unknown as TestWindow;
+        host.supplierPageRequests = [];
+        desktop.handle('open_supplier_page', ({ url }: { url: string }) => {
+            host.supplierPageRequests.push(url);
+            if (host.supplierPageRequests.length === 1) throw new Error('Browser unavailable');
+        });
+    });
+    await page.goto('/app');
+    const select = page.locator('#palette-select');
+    await select.click();
+    await page.getByRole('option', { name: /SUNLU PLA Classic \(15\)/ }).click();
+    await page.getByText('Filament colors', { exact: true }).click();
+
+    const chocolate = page.getByRole('link', { name: 'Chocolate', exact: true });
+    const error = page
+        .getByRole('alert')
+        .filter({ hasText: 'Could not open the manufacturer page.' });
+    await chocolate.click();
+    await expect(error).toBeVisible();
+    await chocolate.click();
+    await expect(error).toHaveCount(0);
+    await expect
+        .poll(() => page.evaluate(() => (window as unknown as TestWindow).supplierPageRequests))
+        .toEqual([sunluLine, sunluLine]);
+    await expect(page).toHaveURL(/\/app\/?$/);
+    await expect(select).toContainText('SUNLU PLA Classic');
 });

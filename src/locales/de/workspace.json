@@ -10,6 +10,8 @@
     "selectAPalette": "Palette auswählen",
     "auto": "Automatisch",
     "supplierPalettes": "Herstellerpaletten",
+    "filamentColors": "Filamentfarben",
+    "openManufacturerFailed": "Die Herstellerseite konnte nicht geöffnet werden.",
     "unofficialReferencePalettesOfFilamentColorNamesAndHex": "Inoffizielle Referenzpaletten mit Filamentfarbnamen und Hex-Werten. Es besteht keine Verbindung zu Herstellern und keine Unterstützung oder Förderung durch sie; die Namen dienen ausschließlich zur Bezeichnung der jeweiligen Produkte.",
     "customPalettes": "Eigene Paletten",
     "numberOfColors": "Anzahl der Farben",

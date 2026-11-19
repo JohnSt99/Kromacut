@@ -10,6 +10,8 @@
         "selectAPalette": "Select a palette",
         "auto": "Auto",
         "supplierPalettes": "Supplier Palettes",
+        "filamentColors": "Filament colors",
+        "openManufacturerFailed": "Could not open the manufacturer page.",
         "unofficialReferencePalettesOfFilamentColorNamesAndHex": "Unofficial reference palettes of filament color names and hex values. Not affiliated with, endorsed by, or sponsored by any manufacturer; names identify the referenced products only.",
         "customPalettes": "Custom Palettes",
         "numberOfColors": "Number of Colors",

@@ -54,6 +54,8 @@ O paletă fixă oferă numai culorile sale selectate. După orice reducere din p
 
 Consultă paginile de produs ale producătorilor. [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+Alege o paletă de furnizor, extinde **Culori de filament** și fă clic pe numele unei culori pentru a deschide pagina producătorului.
+
 Paletele încorporate și cele ale furnizorilor sunt doar pentru citire. Clonează una pentru a o personaliza. Folosește separat [calibrarea filamentelor](calibration-theory) pentru comportamentul real al rolelor și straturilor.
 
 ## Palete personalizate

@@ -54,6 +54,8 @@ As **Paletas de fornecedores** são referências não oficiais de nomes e cores 
 
 Consulte as páginas de produto dos fabricantes. [Polymaker Panchroma Basic PLA](https://shop.polymaker.com/products/panchroma-pla) · [Prusament PLA](https://prusament.com/materials/pla/) · [Prusament PETG](https://prusament.com/materials/prusament-petg/) · [SUNLU PLA Classic](https://www.sunlu.com/products/pla-classic-filament) · [ELEGOO PLA (RFID)](https://www.elegoo.com/products/pla-filament-1-75mm-colored-1kg)
 
+Selecione uma paleta de fornecedor, expanda **Cores de filamento** e clique no nome de uma cor para abrir a página do fabricante.
+
 Paletas integradas e de fornecedores são só de leitura. Clone para personalizar. Use separadamente a [calibração de filamentos](calibration-theory) para o comportamento real de bobinas e camadas.
 
 ## Paletas personalizadas

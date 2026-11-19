@@ -10,6 +10,8 @@
         "selectAPalette": "选择调色板",
         "auto": "自动",
         "supplierPalettes": "厂商调色板",
+        "filamentColors": "耗材颜色",
+        "openManufacturerFailed": "无法打开制造商页面。",
         "unofficialReferencePalettesOfFilamentColorNamesAndHex": "这些是耗材颜色名称及十六进制色值的非官方参考调色板，与任何制造商均无关联，亦未经其认可或赞助；名称仅用于标识所参考的产品。",
         "customPalettes": "自定义调色板",
         "numberOfColors": "颜色数量",

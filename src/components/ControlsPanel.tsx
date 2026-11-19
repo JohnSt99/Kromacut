@@ -13,10 +13,15 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import { PALETTES } from '../data/palettes';
-import { SUPPLIER_PALETTES } from '../data/supplierFilaments';
+import {
+    SUPPLIER_PALETTE_PREFIX,
+    SUPPLIER_PALETTES,
+    SUPPLIER_SETS,
+} from '../data/supplierFilaments';
 import type { MergedPalette } from '../hooks/usePaletteManager';
 import type { CustomPalette } from '../types';
 import { PaletteManager } from './PaletteManager';
+import { SupplierFilamentLinks } from './SupplierFilamentLinks';
 
 interface Props {
     finalColors: number;
@@ -94,6 +99,9 @@ export const ControlsPanel: React.FC<Props> = ({
 
     // Custom palettes as merged entries so counts reflect enabled colors only
     const customEntries = allPalettes.filter((p) => p.custom);
+    const supplier = SUPPLIER_SETS.find(
+        (set) => SUPPLIER_PALETTE_PREFIX + set.id === selectedPalette
+    );
 
     // Sync from parent props
     useEffect(() => {
@@ -306,6 +314,9 @@ export const ControlsPanel: React.FC<Props> = ({
                             dialogOpen={paletteEditorOpen}
                             onDialogOpenChange={onPaletteEditorOpenChange}
                         />
+                        {supplier && (
+                            <SupplierFilamentLinks key={supplier.id} supplier={supplier} />
+                        )}
                     </div>
                     <div className="space-y-2">
                         <div className="flex justify-between items-center">

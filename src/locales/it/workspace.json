@@ -10,6 +10,8 @@
     "selectAPalette": "Seleziona una tavolozza",
     "auto": "Automatico",
     "supplierPalettes": "Tavolozze dei produttori",
+    "filamentColors": "Colori dei filamenti",
+    "openManufacturerFailed": "Impossibile aprire la pagina del produttore.",
     "unofficialReferencePalettesOfFilamentColorNamesAndHex": "Tavolozze di riferimento non ufficiali con nomi e valori esadecimali dei colori dei filamenti. Nessuna affiliazione, approvazione o sponsorizzazione da parte dei produttori; i nomi identificano soltanto i prodotti citati.",
     "customPalettes": "Tavolozze personalizzate",
     "numberOfColors": "Numero di colori",

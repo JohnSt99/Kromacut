@@ -9,6 +9,11 @@ pub fn open_with_default_app(path: &Path) -> io::Result<()> {
 }
 
 #[cfg(target_os = "macos")]
+pub fn open_web_url(url: &reqwest::Url) -> io::Result<()> {
+    checked_launcher(std::process::Command::new("/usr/bin/open").arg(url.as_str()))
+}
+
+#[cfg(target_os = "macos")]
 pub(crate) fn checked_launcher(command: &mut std::process::Command) -> io::Result<()> {
     // `open` exits after dispatch unless passed -W. Merely spawning it loses Launch Services
     // failures such as a missing association, which are reported through its exit status.
@@ -31,12 +36,32 @@ pub fn open_with_default_app(path: &Path) -> io::Result<()> {
     // GIO is already required by the Linux desktop runtime. Unlike waiting on xdg-open,
     // this reports dispatch errors without potentially waiting until the slicer exits.
     let uri = gio::File::for_path(path).uri();
-    gio::AppInfo::launch_default_for_uri(&uri, None::<&gio::AppLaunchContext>)
+    launch_uri(&uri)
+}
+
+#[cfg(all(unix, not(target_os = "macos")))]
+pub fn open_web_url(url: &reqwest::Url) -> io::Result<()> {
+    launch_uri(url.as_str())
+}
+
+#[cfg(all(unix, not(target_os = "macos")))]
+fn launch_uri(uri: &str) -> io::Result<()> {
+    gio::AppInfo::launch_default_for_uri(uri, None::<&gio::AppLaunchContext>)
         .map_err(|error| io::Error::other(error.to_string()))
 }
 
 #[cfg(target_os = "windows")]
 pub fn open_with_default_app(path: &Path) -> io::Result<()> {
+    shell_open(path.as_os_str())
+}
+
+#[cfg(target_os = "windows")]
+pub fn open_web_url(url: &reqwest::Url) -> io::Result<()> {
+    shell_open(std::ffi::OsStr::new(url.as_str()))
+}
+
+#[cfg(target_os = "windows")]
+fn shell_open(target: &std::ffi::OsStr) -> io::Result<()> {
     use std::os::windows::ffi::OsStrExt;
     use windows_sys::Win32::Foundation::RPC_E_CHANGED_MODE;
     use windows_sys::Win32::System::Com::{
@@ -47,11 +72,11 @@ pub fn open_with_default_app(path: &Path) -> io::Result<()> {
     };
     use windows_sys::Win32::UI::WindowsAndMessaging::SW_SHOWNORMAL;
 
-    let mut file: Vec<u16> = path.as_os_str().encode_wide().collect();
+    let mut file: Vec<u16> = target.encode_wide().collect();
     if file.contains(&0) {
         return Err(io::Error::new(
             io::ErrorKind::InvalidInput,
-            "Path contains NUL",
+            "Target contains NUL",
         ));
     }
     file.push(0);
