@@ -28,6 +28,24 @@
         "colorCount_one": "{{count}}টি রঙ",
         "colorCount_other": "{{count}}টি রঙ"
     },
+    "threshold": {
+        "title": "Color thresholds",
+        "summary": "সরাসরি প্রিভিউ দেখে উজ্জ্বলতার অঞ্চলগুলিতে রং দিন।",
+        "open": "Edit thresholds",
+        "help": "প্রতিটি রঙ পরিবর্তনের জন্য ত্রিভুজ টানুন। পূর্বরূপ সঙ্গে সঙ্গে বদলায়। প্রয়োগ করলে বর্তমান সমন্বয়সহ পূর্ণ রেজোলিউশনের ছবিতে পরিবর্তন বসে।",
+        "original": "Show original",
+        "count": "Number of colors",
+        "reset": "Space thresholds evenly",
+        "boundary": "Transition {{n}}",
+        "value": "Threshold {{n}} value",
+        "color": "Color {{n}}",
+        "error": "ছবিটি প্রক্রিয়া করা যায়নি। ছোট ছবি চেষ্টা করুন।",
+        "cancel": "Cancel",
+        "apply": "Apply thresholds",
+        "applying": "Applying…",
+        "cached": "Saved / brand palettes",
+        "chooseCached": "Choose a palette…"
+    },
     "adjustmentsPanel": {
         "previewRenderFailed": "সমন্বয়ের পূর্বরূপ তৈরি করা যায়নি। সর্বশেষ উপলব্ধ ছবিটি এখনও দেখা যাচ্ছে।",
         "retryPreviewRender": "পূর্বরূপ আবার চেষ্টা করুন",

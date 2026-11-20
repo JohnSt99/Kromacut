@@ -93,3 +93,9 @@ Scegli **Nessuno (solo post-elaborazione)** prima di Elimina per mappatura diret
 Le istruzioni manuali sono disattivate oltre 64 colori non trasparenti. Una tavolozza minore semplifica anche sotto tale limite, ma meno obiettivi non significa automaticamente meno cambi Auto-paint.
 
 Successivo: [Rimozione dithering e pulizia](dedithering-cleanup).
+
+## Soglie di luminosità in tempo reale
+
+Sotto **Colori dell’immagine**, apri l’editor delle soglie per creare da 2 a 64 bande. Trascina i triangoli bicolore oppure inserisci valori da 1 a 255. L’anteprima si aggiorna mentre trascini.
+
+Confronta con l’immagine modificata. Applica mantiene risoluzione e trasparenza e aggiunge un passaggio annullabile. Annulla scarta la bozza e interrompe l’elaborazione.

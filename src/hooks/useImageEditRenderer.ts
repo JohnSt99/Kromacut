@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createImageEditingClient } from '../lib/imageEditingClient';
+import type { ImageEditSnapshot } from '../types/imageEditing';
 
 type Preview = HTMLCanvasElement;
 
@@ -20,13 +21,13 @@ export function useImageEditRenderer(imageSrc: string | null) {
 
     const render = useCallback(
         (
-            source: HTMLCanvasElement,
-            adjustments: Record<string, number>,
+            source: HTMLCanvasElement | Blob,
+            settings: Omit<ImageEditSnapshot, 'bitmap'>,
             output: 'preview' | 'png',
             signal: AbortSignal
         ) => {
             client.current ??= createImageEditingClient();
-            return client.current.render(source, { adjustments }, output, signal);
+            return client.current.render(source, settings, output, signal);
         },
         []
     );
@@ -75,7 +76,7 @@ export function useImageEditRenderer(imageSrc: string | null) {
                 };
                 preview.current = next;
                 setPreviewFailed(false);
-                void render(source, adjustments, 'preview', request.signal)
+                void render(source, { adjustments }, 'preview', request.signal)
                     .then((result) => {
                         if (result instanceof Blob) throw new Error('Invalid preview result');
                         const canvas =
@@ -114,11 +115,18 @@ export function useImageEditRenderer(imageSrc: string | null) {
     );
 
     const exportAdjusted = useCallback(
-        async (source: HTMLCanvasElement, adjustments: Record<string, number>) => {
+        async (
+            source: HTMLCanvasElement,
+            adjustments: Record<string, number>,
+            signal?: AbortSignal
+        ) => {
             const controller = new AbortController();
             exports.current.add(controller);
+            const cancel = () => controller.abort();
+            if (signal?.aborted) cancel();
+            else signal?.addEventListener('abort', cancel, { once: true });
             try {
-                const result = await render(source, adjustments, 'png', controller.signal);
+                const result = await render(source, { adjustments }, 'png', controller.signal);
                 if (!(result instanceof Blob)) {
                     if (result instanceof HTMLCanvasElement) releasePreview(result);
                     else result.close();
@@ -129,6 +137,7 @@ export function useImageEditRenderer(imageSrc: string | null) {
                 if (controller.signal.aborted) return null;
                 throw error;
             } finally {
+                signal?.removeEventListener('abort', cancel);
                 exports.current.delete(controller);
             }
         },
@@ -142,5 +151,12 @@ export function useImageEditRenderer(imageSrc: string | null) {
         return preview.current.image;
     };
 
-    return { adjustedPreview, invalidatePreview, editPreview, exportAdjusted, previewFailed };
+    return {
+        adjustedPreview,
+        invalidatePreview,
+        editPreview,
+        exportAdjusted,
+        previewFailed,
+        render,
+    };
 }

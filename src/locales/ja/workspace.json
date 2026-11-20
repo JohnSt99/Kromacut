@@ -28,6 +28,24 @@
         "colorCount_one": "{{count}} 色",
         "colorCount_other": "{{count}} 色"
     },
+    "threshold": {
+        "title": "Color thresholds",
+        "summary": "明るさの範囲に色を割り当て、リアルタイムで確認します。",
+        "open": "Edit thresholds",
+        "help": "色の境界ごとに三角形をドラッグすると、プレビューがリアルタイムで更新されます。適用すると現在の調整を含む原寸画像に反映されます。",
+        "original": "Show original",
+        "count": "Number of colors",
+        "reset": "Space thresholds evenly",
+        "boundary": "Transition {{n}}",
+        "value": "Threshold {{n}} value",
+        "color": "Color {{n}}",
+        "error": "画像を処理できませんでした。小さい画像を試してください。",
+        "cancel": "Cancel",
+        "apply": "Apply thresholds",
+        "applying": "Applying…",
+        "cached": "Saved / brand palettes",
+        "chooseCached": "Choose a palette…"
+    },
     "adjustmentsPanel": {
         "previewRenderFailed": "調整のプレビューを作成できませんでした。最後に表示できた画像を表示しています。",
         "retryPreviewRender": "プレビューを再試行",

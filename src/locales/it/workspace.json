@@ -29,6 +29,24 @@
     "colorCount_other": "{{count}} colori",
     "colorCount_many": "{{count}} colori"
   },
+  "threshold": {
+    "title": "Color thresholds",
+    "summary": "Assegna fasce di luminosità ai colori con anteprima dal vivo.",
+    "open": "Edit thresholds",
+    "help": "Trascina un triangolo per ogni transizione. L’anteprima si aggiorna in tempo reale. Applica rende effettiva l’immagine a piena risoluzione con le regolazioni.",
+    "original": "Show original",
+    "count": "Number of colors",
+    "reset": "Space thresholds evenly",
+    "boundary": "Transition {{n}}",
+    "value": "Threshold {{n}} value",
+    "color": "Color {{n}}",
+    "error": "Impossibile elaborare l’immagine. Prova un’immagine più piccola.",
+    "cancel": "Cancel",
+    "apply": "Apply thresholds",
+    "applying": "Applying…",
+    "cached": "Saved / brand palettes",
+    "chooseCached": "Choose a palette…"
+  },
   "adjustmentsPanel": {
     "previewRenderFailed": "Impossibile generare l’anteprima delle regolazioni. Rimane visibile l’ultima immagine disponibile.",
     "retryPreviewRender": "Riprova anteprima",

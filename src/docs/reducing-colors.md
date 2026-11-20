@@ -93,3 +93,9 @@ Choose **None (postprocess only)** before Delete for direct mapping to the remai
 Manual swap instructions are disabled above 64 nontransparent colors. A smaller palette can simplify the stack even below that limit, but fewer targets do not automatically mean fewer Auto-paint filament changes.
 
 Next: [Dedithering and cleanup](dedithering-cleanup).
+
+## Live Brightness Thresholds
+
+Below **Image colors**, open **Edit thresholds** to map brightness to 2–64 colors. Kromacut starts with the current image swatches in brightness order. Drag the two-tone triangles or enter boundary values from 1 to 255. A pixel exactly on a boundary uses the brighter band. You can set each color directly or choose a saved palette.
+
+The bounded preview updates while you move a handle. **Show original** compares the adjusted source before band mapping. **Apply thresholds** commits the full-resolution result, keeps transparent and partially transparent pixels, and creates an undo step. **Cancel** discards the draft and stops any pending Apply.

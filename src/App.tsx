@@ -16,6 +16,7 @@ import ThreeDView from './components/ThreeDView';
 import logo from './assets/logo.png';
 import CanvasPreview from './components/CanvasPreview';
 import type { CanvasPreviewHandle } from './components/CanvasPreview';
+import ThresholdPanel from './components/ThresholdPanel';
 import { SwatchesPanel } from './components/SwatchesPanel';
 import AdjustmentsPanel from './components/AdjustmentsPanel';
 import DeditherPanel from './components/DeditherPanel';
@@ -332,6 +333,14 @@ function App(): React.ReactElement | null {
     // initial selectedPalette derived from initial weight above
     const inputRef = useRef<HTMLInputElement | null>(null);
     const canvasPreviewRef = useRef<CanvasPreviewHandle | null>(null);
+    const renderThreshold: CanvasPreviewHandle['renderThresholdImage'] = useCallback(
+        (source, bands, output, signal) => {
+            const canvas = canvasPreviewRef.current;
+            if (!canvas) return Promise.reject(new Error('Image preview unavailable'));
+            return canvas.renderThresholdImage(source, bands, output, signal);
+        },
+        []
+    );
     const downloadMenuButtonRef = useRef<HTMLButtonElement | null>(null);
     const [showCheckerboard, setShowCheckerboard] = useState<boolean>(false);
     const [isCropMode, setIsCropMode] = useState(false);
@@ -863,6 +872,30 @@ function App(): React.ReactElement | null {
                                                 cap={SWATCH_CAP}
                                                 onSwatchDelete={onSwatchDelete}
                                                 onSwatchApply={onSwatchApply}
+                                            />
+                                            <ThresholdPanel
+                                                disabled={
+                                                    processingActive ||
+                                                    isCropMode ||
+                                                    imageCanvasLoading
+                                                }
+                                                imageSrc={imageSrc}
+                                                currentColors={swatches
+                                                    .filter(
+                                                        (swatch) =>
+                                                            swatch.a > 0 && !swatch.isTransparent
+                                                    )
+                                                    .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
+                                                    .map((swatch) => swatch.hex)}
+                                                getSnapshot={async (signal) =>
+                                                    (await canvasPreviewRef.current?.exportAdjustedImageBlob?.(
+                                                        undefined,
+                                                        signal
+                                                    )) ?? null
+                                                }
+                                                render={renderThreshold}
+                                                palettes={allPalettes}
+                                                onApply={imageActions.commitAdjustedImage}
                                             />
                                         </fieldset>
                                     </>

@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 import { isAllDefault } from '../lib/applyAdjustments';
 import { useImageEditRenderer } from '../hooks/useImageEditRenderer';
+import type { ThresholdBands } from '../lib/thresholds';
 import { Check, Move, X } from 'lucide-react';
 import {
     brushSpans,
@@ -34,8 +35,15 @@ export interface CanvasPreviewHandle {
     hasValidCropSelection: () => boolean;
     onCropSelectionChange?: (hasValid: boolean) => void;
     exportAdjustedImageBlob?: (
-        adjustmentsOverride?: Record<string, number>
+        adjustmentsOverride?: Record<string, number>,
+        signal?: AbortSignal
     ) => Promise<Blob | null>;
+    renderThresholdImage: (
+        source: HTMLCanvasElement | Blob,
+        bands: ThresholdBands,
+        output: 'preview' | 'png',
+        signal: AbortSignal
+    ) => Promise<HTMLCanvasElement | ImageBitmap | Blob>;
 }
 
 interface Props {
@@ -142,8 +150,14 @@ const CanvasPreview = forwardRef<CanvasPreviewHandle, Props>(
 
         // Offscreen originals & processed versions
         const originalCanvasRef = useRef<HTMLCanvasElement | null>(null);
-        const { adjustedPreview, invalidatePreview, editPreview, exportAdjusted, previewFailed } =
-            useImageEditRenderer(imageSrc);
+        const {
+            adjustedPreview,
+            invalidatePreview,
+            editPreview,
+            exportAdjusted,
+            previewFailed,
+            render,
+        } = useImageEditRenderer(imageSrc);
         const mountedRef = useRef(true);
         const activeTouchStrokeRef = useRef<ActiveTouchStroke | null>(null);
         // Object URLs of our own pending commits. When one of them arrives back
@@ -1250,13 +1264,16 @@ const CanvasPreview = forwardRef<CanvasPreviewHandle, Props>(
                 );
             },
             exportAdjustedImageBlob: async (
-                adjustmentsOverride?: Record<string, number>
+                adjustmentsOverride?: Record<string, number>,
+                signal?: AbortSignal
             ): Promise<Blob | null> => {
                 if (!hasCurrentImagePixels()) return null;
                 const source = originalCanvasRef.current ?? committedCanvasRef.current;
                 if (!source) return null;
-                return exportAdjusted(source, adjustmentsOverride ?? adjustments ?? {});
+                return exportAdjusted(source, adjustmentsOverride ?? adjustments ?? {}, signal);
             },
+            renderThresholdImage: (source, thresholds, output, signal) =>
+                render(source, { adjustments: {}, thresholds }, output, signal),
         }));
 
         return (

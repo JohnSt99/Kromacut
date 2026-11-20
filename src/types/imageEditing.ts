@@ -1,7 +1,10 @@
+import type { ThresholdBands } from '../lib/thresholds';
+
 export interface ImageEditSnapshot {
     bitmap: ImageBitmap;
     adjustments: Record<string, number>;
     replacements?: Record<string, string>;
+    thresholds?: ThresholdBands;
 }
 
 export type ImageEditRequest =

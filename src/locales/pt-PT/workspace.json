@@ -29,6 +29,24 @@
     "colorCount_other": "{{count}} cores",
     "colorCount_many": "{{count}} cores"
   },
+  "threshold": {
+    "title": "Color thresholds",
+    "summary": "Atribua intervalos de luminosidade às cores com pré-visualização em direto.",
+    "open": "Edit thresholds",
+    "help": "Arraste um triângulo por cada transição. A pré-visualização atualiza-se em direto. Aplicar confirma a imagem na resolução original com os ajustes.",
+    "original": "Show original",
+    "count": "Number of colors",
+    "reset": "Space thresholds evenly",
+    "boundary": "Transition {{n}}",
+    "value": "Threshold {{n}} value",
+    "color": "Color {{n}}",
+    "error": "Não foi possível processar a imagem. Experimente uma imagem mais pequena.",
+    "cancel": "Cancel",
+    "apply": "Apply thresholds",
+    "applying": "Applying…",
+    "cached": "Saved / brand palettes",
+    "chooseCached": "Choose a palette…"
+  },
   "adjustmentsPanel": {
     "previewRenderFailed": "Não foi possível gerar a pré-visualização dos ajustes. A última imagem disponível continua visível.",
     "retryPreviewRender": "Repetir pré-visualização",

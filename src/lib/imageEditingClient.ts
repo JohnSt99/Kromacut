@@ -1,3 +1,4 @@
+import { decodeImage } from './decodeImage';
 import { renderImageEdit } from './renderImageEdit';
 import type { ImageEditRequest, ImageEditResponse, ImageEditSnapshot } from '../types/imageEditing';
 
@@ -57,7 +58,7 @@ export function createImageEditingClient() {
     }
 
     async function renderInWorker(
-        source: HTMLCanvasElement,
+        source: HTMLCanvasElement | Blob,
         settings: Omit<ImageEditSnapshot, 'bitmap'>,
         output: RenderOutput,
         signal: AbortSignal
@@ -106,7 +107,7 @@ export function createImageEditingClient() {
     }
 
     async function render(
-        source: HTMLCanvasElement,
+        source: HTMLCanvasElement | Blob,
         settings: Omit<ImageEditSnapshot, 'bitmap'>,
         output: RenderOutput,
         signal: AbortSignal
@@ -123,10 +124,14 @@ export function createImageEditingClient() {
             canvas.height = h;
             return canvas;
         }
-        const snapshot = makeCanvas(source.width, source.height);
+        const url = source instanceof Blob ? URL.createObjectURL(source) : null;
+        const input = url ? await decodeImage(url).finally(() => URL.revokeObjectURL(url)) : source;
+        signal.throwIfAborted();
+        if (!input || input instanceof Blob) throw new Error('Cannot decode image edits');
+        const snapshot = makeCanvas(input.width, input.height);
         const ctx = snapshot.getContext('2d');
         if (!ctx) throw new Error('Cannot capture image edits');
-        ctx.drawImage(source, 0, 0);
+        ctx.drawImage(input, 0, 0);
         try {
             const canvas = await renderImageEdit(snapshot, settings, makeCanvas, signal);
             if (output === 'preview') return canvas;

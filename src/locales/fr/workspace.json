@@ -29,6 +29,24 @@
     "colorCount_other": "{{count}} couleurs",
     "colorCount_many": "{{count}} couleurs"
   },
+  "threshold": {
+    "title": "Color thresholds",
+    "summary": "Attribuez des plages de luminosité aux couleurs avec aperçu en direct.",
+    "open": "Edit thresholds",
+    "help": "Faites glisser un triangle pour chaque transition. L’aperçu se met à jour en direct. Appliquer valide l’image en pleine résolution avec ses réglages.",
+    "original": "Show original",
+    "count": "Number of colors",
+    "reset": "Space thresholds evenly",
+    "boundary": "Transition {{n}}",
+    "value": "Threshold {{n}} value",
+    "color": "Color {{n}}",
+    "error": "Impossible de traiter cette image. Essayez une image plus petite.",
+    "cancel": "Cancel",
+    "apply": "Apply thresholds",
+    "applying": "Applying…",
+    "cached": "Saved / brand palettes",
+    "chooseCached": "Choose a palette…"
+  },
   "adjustmentsPanel": {
     "previewRenderFailed": "Impossible de calculer l’aperçu des réglages. La dernière image disponible reste affichée.",
     "retryPreviewRender": "Réessayer l’aperçu",

@@ -28,6 +28,24 @@
         "colorCount_one": "{{count}} रंग",
         "colorCount_other": "{{count}} रंग"
     },
+    "threshold": {
+        "title": "Color thresholds",
+        "summary": "लाइव पूर्वावलोकन के साथ चमक के क्षेत्रों को रंग दें।",
+        "open": "Edit thresholds",
+        "help": "हर रंग परिवर्तन के लिए त्रिकोण खींचें। पूर्वावलोकन तुरंत बदलता है। लागू करने से मौजूदा समायोजनों सहित पूरी रिज़ॉल्यूशन की छवि बदलती है।",
+        "original": "Show original",
+        "count": "Number of colors",
+        "reset": "Space thresholds evenly",
+        "boundary": "Transition {{n}}",
+        "value": "Threshold {{n}} value",
+        "color": "Color {{n}}",
+        "error": "छवि संसाधित नहीं हो सकी। छोटी छवि आज़माएँ।",
+        "cancel": "Cancel",
+        "apply": "Apply thresholds",
+        "applying": "Applying…",
+        "cached": "Saved / brand palettes",
+        "chooseCached": "Choose a palette…"
+    },
     "adjustmentsPanel": {
         "previewRenderFailed": "समायोजन का पूर्वावलोकन नहीं बन सका। पिछली उपलब्ध छवि अभी भी दिखाई जा रही है।",
         "retryPreviewRender": "पूर्वावलोकन दोबारा बनाएँ",

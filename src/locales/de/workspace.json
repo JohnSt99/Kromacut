@@ -28,6 +28,24 @@
     "colorCount_one": "{{count}} Farbe",
     "colorCount_other": "{{count}} Farben"
   },
+  "threshold": {
+    "title": "Color thresholds",
+    "summary": "Helligkeitsbereiche mit Live-Vorschau Farben zuordnen.",
+    "open": "Edit thresholds",
+    "help": "Ziehe für jeden Farbübergang ein Dreieck. Die Vorschau aktualisiert sich sofort. Anwenden übernimmt das Bild in voller Auflösung mit seinen Anpassungen.",
+    "original": "Show original",
+    "count": "Number of colors",
+    "reset": "Space thresholds evenly",
+    "boundary": "Transition {{n}}",
+    "value": "Threshold {{n}} value",
+    "color": "Color {{n}}",
+    "error": "Bild konnte nicht verarbeitet werden. Versuchen Sie ein kleineres Bild.",
+    "cancel": "Cancel",
+    "apply": "Apply thresholds",
+    "applying": "Applying…",
+    "cached": "Saved / brand palettes",
+    "chooseCached": "Choose a palette…"
+  },
   "adjustmentsPanel": {
         "previewRenderFailed": "Die Vorschau der Anpassungen konnte nicht berechnet werden. Das letzte verfügbare Bild wird weiterhin angezeigt.",
         "retryPreviewRender": "Vorschau erneut versuchen",
