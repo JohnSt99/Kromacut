@@ -93,3 +93,9 @@ Alege **Niciunul (doar postprocesare)** înainte de Șterge pentru mapare direct
 Instrucțiunile de schimbare manuală sunt dezactivate peste 64 de culori netransparente. O paletă mai mică poate simplifica stiva chiar sub această limită, dar mai puține ținte nu înseamnă automat mai puține schimbări de filament în Auto-paint.
 
 În continuare: [Eliminarea ditheringului și curățarea](dedithering-cleanup).
+
+## Praguri de luminozitate în timp real
+
+Sub **Culorile imaginii**, deschide editorul de praguri pentru 2–64 de benzi. Mută triunghiurile bicolore sau introdu valori de la 1 la 255. Previzualizarea se actualizează în timpul deplasării.
+
+Compară cu sursa ajustată. Aplică păstrează rezoluția și transparența și creează un pas reversibil. Anulează elimină schița și oprește procesarea.

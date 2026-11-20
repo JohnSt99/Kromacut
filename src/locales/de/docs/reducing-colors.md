@@ -93,3 +93,9 @@ Wähle vor Löschen **Keiner (nur Nachbearbeitung)** für eine direkte Zuordnung
 Manuelle Wechselanweisungen sind oberhalb von 64 nichttransparenten Farben deaktiviert. Auch unterhalb dieser Grenze kann eine kleinere Palette den Stapel vereinfachen. Weniger Zielfarben bedeuten aber nicht automatisch weniger Filamentwechsel in Auto-paint.
 
 Weiter: [Rasterglättung und Bereinigung](dedithering-cleanup).
+
+## Live-Helligkeitsschwellen
+
+Öffne unter **Bildfarben** die Schwellenbearbeitung für 2–64 Helligkeitsbänder. Ziehe die zweifarbigen Dreiecke oder gib einen Wert zwischen 1 und 255 ein. Die Vorschau aktualisiert sich beim Ziehen.
+
+Vergleiche mit der angepassten Quelle. Anwenden übernimmt das Bild in voller Auflösung, erhält Transparenz und fügt einen Rückgängig-Schritt hinzu. Abbrechen verwirft den Entwurf und stoppt die Verarbeitung.

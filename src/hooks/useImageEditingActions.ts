@@ -145,15 +145,20 @@ export function useImageEditingActions({
             if (sourceUrl) URL.revokeObjectURL(sourceUrl);
         }
     };
+    const commitAdjustedImage = (blob: Blob) => {
+        if (!beginEdit()) return false;
+        commit(blob);
+        setAdjustments(ADJUSTMENT_DEFAULTS);
+        resetAdjustmentsPanel();
+        return true;
+    };
     const bakeAdjustments = async (values: Record<string, number>) => {
         const current = beginEdit();
         if (!current || !canvasPreviewRef.current) return;
         try {
             const blob = await canvasPreviewRef.current.exportAdjustedImageBlob?.(values);
             if (!blob || !current()) return;
-            commit(blob);
-            setAdjustments(ADJUSTMENT_DEFAULTS);
-            resetAdjustmentsPanel();
+            commitAdjustedImage(blob);
         } catch (error) {
             if (current()) {
                 console.warn('Bake adjustments failed', error);
@@ -226,6 +231,7 @@ export function useImageEditingActions({
         clearImage,
         resizeCurrentImage,
         bakeAdjustments,
+        commitAdjustedImage,
         saveCrop,
         commitTouchUp,
         applyQuantize,

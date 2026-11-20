@@ -28,6 +28,24 @@
         "colorCount_one": "{{count}} color",
         "colorCount_other": "{{count}} colors"
     },
+    "threshold": {
+        "title": "Color thresholds",
+        "summary": "Assign image brightness bands to your colors, with live preview.",
+        "open": "Edit thresholds",
+        "help": "Drag a triangle for each color transition. Changes preview live. Apply commits the full-resolution image with its current adjustments.",
+        "original": "Show original",
+        "count": "Number of colors",
+        "reset": "Space thresholds evenly",
+        "boundary": "Transition {{n}}",
+        "value": "Threshold {{n}} value",
+        "color": "Color {{n}}",
+        "error": "Could not process the image. Try a smaller image.",
+        "cancel": "Cancel",
+        "apply": "Apply thresholds",
+        "applying": "Applying…",
+        "cached": "Saved / brand palettes",
+        "chooseCached": "Choose a palette…"
+    },
     "adjustmentsPanel": {
         "previewRenderFailed": "Could not render the adjustment preview. The last available image is still displayed.",
         "retryPreviewRender": "Retry preview",

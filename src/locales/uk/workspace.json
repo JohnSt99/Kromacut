@@ -30,6 +30,24 @@
     "colorCount_few": "{{count}} кольори",
     "colorCount_many": "{{count}} кольорів"
   },
+  "threshold": {
+    "title": "Color thresholds",
+    "summary": "Призначайте кольори діапазонам яскравості з миттєвим переглядом.",
+    "open": "Edit thresholds",
+    "help": "Перетягуйте трикутник для кожного переходу. Попередній перегляд оновлюється в реальному часі. Застосувати зберігає зміни з поточними коригуваннями в повній роздільності.",
+    "original": "Show original",
+    "count": "Number of colors",
+    "reset": "Space thresholds evenly",
+    "boundary": "Transition {{n}}",
+    "value": "Threshold {{n}} value",
+    "color": "Color {{n}}",
+    "error": "Не вдалося обробити зображення. Спробуйте менше зображення.",
+    "cancel": "Cancel",
+    "apply": "Apply thresholds",
+    "applying": "Applying…",
+    "cached": "Saved / brand palettes",
+    "chooseCached": "Choose a palette…"
+  },
   "adjustmentsPanel": {
     "previewRenderFailed": "Не вдалося відобразити попередній перегляд коригувань. Залишається останнє доступне зображення.",
     "retryPreviewRender": "Повторити перегляд",

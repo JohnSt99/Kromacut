@@ -93,3 +93,9 @@ Choisissez **Aucun (post-traitement seul)** avant Supprimer pour une association
 Les instructions de changement manuel sont désactivées au-delà de 64 couleurs non transparentes. Une palette plus petite peut simplifier l’empilement même sous cette limite, mais moins de cibles ne signifie pas automatiquement moins de changements de filament en peinture automatique.
 
 Suite : [Détramage et nettoyage](dedithering-cleanup).
+
+## Seuils de luminosité en direct
+
+Sous **Couleurs de l’image**, ouvrez l’éditeur de seuils pour définir 2 à 64 bandes. Déplacez les triangles bicolores ou entrez des seuils de 1 à 255. L’aperçu se met à jour pendant le déplacement.
+
+Comparez avec la source ajustée. Appliquer valide l’image en pleine résolution, conserve la transparence et crée une étape d’annulation. Annuler abandonne le brouillon et arrête le traitement.

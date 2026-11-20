@@ -29,6 +29,24 @@
     "colorCount_other": "{{count}} de culori",
     "colorCount_few": "{{count}} culori"
   },
+  "threshold": {
+    "title": "Color thresholds",
+    "summary": "Atribuie intervale de luminozitate culorilor cu previzualizare live.",
+    "open": "Edit thresholds",
+    "help": "Trage un triunghi pentru fiecare tranziție. Previzualizarea se actualizează în timp real. Aplică validează imaginea la rezoluție completă cu ajustările curente.",
+    "original": "Show original",
+    "count": "Number of colors",
+    "reset": "Space thresholds evenly",
+    "boundary": "Transition {{n}}",
+    "value": "Threshold {{n}} value",
+    "color": "Color {{n}}",
+    "error": "Imaginea nu a putut fi procesată. Încearcă o imagine mai mică.",
+    "cancel": "Cancel",
+    "apply": "Apply thresholds",
+    "applying": "Applying…",
+    "cached": "Saved / brand palettes",
+    "chooseCached": "Choose a palette…"
+  },
   "adjustmentsPanel": {
     "previewRenderFailed": "Previzualizarea ajustărilor nu a putut fi generată. Ultima imagine disponibilă rămâne afișată.",
     "retryPreviewRender": "Reîncearcă previzualizarea",

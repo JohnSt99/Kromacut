@@ -29,6 +29,24 @@
     "colorCount_other": "{{count}} colores",
     "colorCount_many": "{{count}} colores"
   },
+  "threshold": {
+    "title": "Color thresholds",
+    "summary": "Asigna intervalos de brillo a colores con vista previa en vivo.",
+    "open": "Edit thresholds",
+    "help": "Arrastra un triángulo por cada transición. La vista previa se actualiza en directo. Aplicar guarda la imagen a resolución completa con sus ajustes.",
+    "original": "Show original",
+    "count": "Number of colors",
+    "reset": "Space thresholds evenly",
+    "boundary": "Transition {{n}}",
+    "value": "Threshold {{n}} value",
+    "color": "Color {{n}}",
+    "error": "No se pudo procesar la imagen. Prueba una imagen más pequeña.",
+    "cancel": "Cancel",
+    "apply": "Apply thresholds",
+    "applying": "Applying…",
+    "cached": "Saved / brand palettes",
+    "chooseCached": "Choose a palette…"
+  },
   "adjustmentsPanel": {
     "previewRenderFailed": "No se pudo generar la vista previa de los ajustes. Se sigue mostrando la última imagen disponible.",
     "retryPreviewRender": "Reintentar vista previa",

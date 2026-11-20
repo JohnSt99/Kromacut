@@ -28,6 +28,24 @@
         "colorCount_one": "{{count}} 种颜色",
         "colorCount_other": "{{count}} 种颜色"
     },
+    "threshold": {
+        "title": "Color thresholds",
+        "summary": "将亮度区间映射到颜色，并实时预览。",
+        "open": "Edit thresholds",
+        "help": "拖动每个颜色过渡的三角形，实时查看效果。应用会将当前调整一起写入全分辨率图像。",
+        "original": "Show original",
+        "count": "Number of colors",
+        "reset": "Space thresholds evenly",
+        "boundary": "Transition {{n}}",
+        "value": "Threshold {{n}} value",
+        "color": "Color {{n}}",
+        "error": "无法处理图像。请尝试较小的图像。",
+        "cancel": "Cancel",
+        "apply": "Apply thresholds",
+        "applying": "Applying…",
+        "cached": "Saved / brand palettes",
+        "chooseCached": "Choose a palette…"
+    },
     "adjustmentsPanel": {
         "previewRenderFailed": "无法生成调整预览。仍显示上一次可用的图像。",
         "retryPreviewRender": "重试预览",

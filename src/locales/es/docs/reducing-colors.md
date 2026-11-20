@@ -93,3 +93,9 @@ Elige **Ninguno (solo posprocesado)** antes de Eliminar para asignar directament
 Las instrucciones manuales de cambios se desactivan por encima de 64 colores no transparentes. Una paleta menor puede simplificar el apilamiento incluso por debajo del límite, pero menos objetivos no implica automáticamente menos cambios en pintura automática.
 
 Siguiente: [Eliminación de tramado y limpieza](dedithering-cleanup).
+
+## Umbrales de brillo en directo
+
+Abre el editor de umbrales bajo **Colores de la imagen** para definir de 2 a 64 bandas. Arrastra los triángulos bicolores o escribe valores del 1 al 255. La vista previa se actualiza al arrastrar.
+
+Compara con la fuente ajustada. Aplicar conserva la resolución y la transparencia y crea un paso que se puede deshacer. Cancelar descarta el borrador y detiene el proceso.

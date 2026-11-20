@@ -93,3 +93,9 @@ Escolha **Nenhum (apenas pós-processamento)** antes de Eliminar para mapear dir
 As instruções manuais ficam desativadas acima de 64 cores não transparentes. Menos cores podem simplificar mesmo abaixo disso, mas menos alvos não significam automaticamente menos trocas na pintura automática.
 
 Seguinte: [Remoção de pontilhamento e limpeza](dedithering-cleanup).
+
+## Limiares de brilho em direto
+
+Em **Cores da imagem**, abra o editor de limiares para definir 2 a 64 bandas. Arraste os triângulos de duas cores ou introduza valores de 1 a 255. A pré-visualização atualiza-se ao arrastar.
+
+Compare com a imagem ajustada. Aplicar preserva a resolução e a transparência e cria um passo para desfazer. Cancelar descarta o rascunho e interrompe o processamento.

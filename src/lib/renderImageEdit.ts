@@ -1,4 +1,5 @@
 import { applyAdjustments, isAllDefault } from './applyAdjustments.ts';
+import { applyThresholdLookup, createThresholdLookup } from './thresholds.ts';
 import { applyReplacementLookup, createReplacementLookup } from './replaceImageColors.ts';
 import type { ImageEditSnapshot } from '../types';
 
@@ -21,10 +22,13 @@ export async function renderImageEdit<Canvas extends HTMLCanvasElement | Offscre
         | null;
     if (!destination) throw new Error('Cannot create image-edit canvas');
 
-    const { adjustments, replacements } = edit;
+    const { adjustments, replacements, thresholds } = edit;
+    const bands = thresholds
+        ? createThresholdLookup(thresholds.boundaries, thresholds.colors)
+        : null;
     const lookup = createReplacementLookup(replacements ?? {});
     const adjust = !isAllDefault(adjustments);
-    if (!adjust && !lookup.size) {
+    if (!adjust && !lookup.size && !bands) {
         destination.drawImage(source, 0, 0);
         return output;
     }
@@ -64,8 +68,10 @@ export async function renderImageEdit<Canvas extends HTMLCanvasElement | Offscre
                 ctx.drawImage(source, left, top, w, h, 0, 0, w, h);
                 const pixels = ctx.getImageData(0, 0, w, h);
                 applyReplacementLookup(pixels.data, lookup);
+                const rendered = adjust ? applyAdjustments(pixels, adjustments, scratch) : pixels;
+                if (bands) applyThresholdLookup(rendered.data, bands);
                 destination.putImageData(
-                    adjust ? applyAdjustments(pixels, adjustments, scratch) : pixels,
+                    rendered,
                     left,
                     top,
                     x - left,
